@@ -1,4 +1,4 @@
-package com.devsuperior.dsvendas.config;
+package com.mtstechnologies.mtsvendas.config;
 
 import java.util.Arrays;
 
@@ -20,18 +20,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private Environment env;
-//abaixo eulibero o aplicativo de gerenciamento do banco de dados H2
+
+// liberei o aplicativo de gerenciamento de banco de dados H2
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		if (Arrays.asList(env.getActiveProfiles()).contains("test")) {
 			http.headers().frameOptions().disable();
 		}
-		//aqui eu chamo e libero a aplicação e digo que nao manterá estado.
+		
 		http.cors().and().csrf().disable();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.authorizeRequests().anyRequest().permitAll();
 	}
-//abaixo instanciei um objeto p/ definir as configurções de cors da aplicação, liberei o acesso para o frontend consumir a api de outro dominio
+	
+//instanciei um obj para definir as configurações de cors da minha aplicação, liberando acesso para meu frontend acessar através de outro dominio
+	
 	@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();

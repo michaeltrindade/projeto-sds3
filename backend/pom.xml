@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.12</version>
+		<version>2.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.devsuperior</groupId>
-	<artifactId>dsvendas</artifactId>
+	<groupId>com.mtstechnologies</groupId>
+	<artifactId>mtsvendas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dsvendas</name>
-	<description>programa desenvolvido durante a semana Sprin React da DevSuperior</description>
+	<name>mtsvendas</name>
+	<description>Projeto desenvolvido durante a semana Spring React</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
